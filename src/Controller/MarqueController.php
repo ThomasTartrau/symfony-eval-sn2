@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
-#[Route('/marque')]
+#[Route('/')]
 final class MarqueController extends AbstractController
 {
     #[Route(name: 'app_marque_index', methods: ['GET'])]
