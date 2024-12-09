@@ -22,7 +22,7 @@ final class AbatJourController extends AbstractController
         ]);
     }
 
-    #[Route('/new', name: 'app_abat_jour_new', methods: ['GET', 'POST'])]
+    #[Route('/new', name: 'ss', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $abatJour = new AbatJour();
