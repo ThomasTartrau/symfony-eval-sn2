@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}AbatJour index{% endblock %}
+
+{% block body %}
+    <h1>AbatJour index</h1>
+
+    <a class="btn btn-secondary" href="{{ path('app_marque_index') }}">retour aux marques</a>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Description</th>
+                <th>Couleur</th>
+                <th>Matiere</th>
+                <th>Forme</th>
+                <th>Dimensions</th>
+                <th>CodeBarre</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for abat_jour in abat_jours %}
+            <tr>
+                <td>{{ abat_jour.id }}</td>
+                <td>{{ abat_jour.Titre }}</td>
+                <td>{{ abat_jour.Description }}</td>
+                <td>{{ abat_jour.Couleur }}</td>
+                <td>{{ abat_jour.Matiere }}</td>
+                <td>{{ abat_jour.Forme }}</td>
+                <td>{{ abat_jour.Dimensions }}</td>
+                <td>{{ abat_jour.CodeBarre }}</td>
+                <td>
+                    <a class="btn btn-primary" href="{{ path('app_abat_jour_show', {'id': abat_jour.id}) }}">voir</a>
+                    <a class="btn btn-primary" href="{{ path('app_abat_jour_edit', {'id': abat_jour.id}) }}">éditer</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">Aucune abat-jour trouvée</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a class="btn btn-primary" href="{{ path('app_abat_jour_new') }}">Créer une nouvelle abat-jour</a>
+{% endblock %}

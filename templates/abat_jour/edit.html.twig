@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier un abat-jour{% endblock %}
+
+{% block body %}
+    <h1>Modifier un abat-jour</h1>
+
+    {{ include('abat_jour/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+
+    <a class="btn btn-secondary" href="{{ path('app_abat_jour_index') }}">retour à la liste</a>
+
+    {{ include('abat_jour/_delete_form.html.twig') }}
+{% endblock %}
